@@ -1,0 +1,319 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Condensed';
+  src: local('Proxima Nova Condensed Black'),
+    local('Proxima-Nova-Condensed-Black'),
+    url('fonts/ProximaNovaCond-Black.woff2') format('woff2'),
+    url('fonts/ProximaNovaCond-Black.woff') format('woff'),
+    url('fonts/ProximaNovaCond-Black.ttf') format('truetype');
+}
+
+h1 {
+  font-family: 'Proxima Nova Condensed';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 38px;
+  text-align: center;
+  color: #000000;
+  margin: 93px auto 48px;
+}
+
+.block-register {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 62px;
+  margin-bottom: 70px;
+}
+
+.card {
+  box-sizing: border-box;
+  max-width: 670px;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.09),
+    0px 3px 19px rgba(51, 51, 51, 0.04);
+}
+
+.index-register-card {
+  padding: 0 0 35px 0;
+  border-radius: 3px;
+  min-width: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-card-universal {
+  padding: 34px 34px 36px 37px;
+  border-radius: 6px;
+  margin: 0 auto 70px;
+  position: relative;
+  box-shadow: 0px 0px 12px rgba(46, 45, 61, 0.18),
+    0px 16px 80px rgba(0, 0, 0, 0.04);
+}
+
+.form-card-universal.form-2-card {
+  padding-top: 34px;
+}
+
+.form-card-universal p:last-child {
+  margin: 16px 0 0 0;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #999999;
+}
+
+.form-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  background: #2998ff;
+  border: 1px solid #0f8fee;
+  border-radius: 3px;
+  color: white;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #0070c1;
+  box-shadow: inset 0px 3px 0px rgba(0, 0, 0, 0.15);
+}
+
+.index-btn {
+  padding: 11px 51px;
+  max-width: 172px;
+  margin-top: 1px;
+}
+
+.register-btn {
+  padding: 12px 20px;
+  max-width: 192px;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.img-male {
+  margin-top: 19px;
+  margin-right: 13px;
+}
+
+.index-register-card .img-female {
+  margin-bottom: -8px;
+}
+
+.form-horizontal-block {
+  display: grid;
+  grid-template-columns: auto 199px;
+  gap: 20px;
+}
+
+.form-1 > div:first-child {
+  display: none;
+}
+
+.form-horizontal-block .img-female {
+  max-width: 203px;
+}
+
+.form-horizontal-block div:first-child {
+  flex-grow: 5;
+  display: flex;
+  flex-direction: column;
+  min-height: 117px;
+}
+
+.form-horizontal-block div:first-child .form-input {
+  margin-top: 18px;
+}
+
+.form-horizontal-block div:first-child .form-input:first-child {
+  margin-top: 0;
+}
+
+.form-horizontal-block div:last-child {
+  flex-grow: 1;
+}
+
+.form-1 .form-horizontal-block div:last-child img {
+  margin-top: -34px;
+}
+
+.form-input {
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  padding: 15px 55px 15px 15px;
+}
+
+.form-input::placeholder {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: #b3b3b3;
+}
+
+.checkbox-label {
+  position: relative;
+  cursor: pointer;
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 25px 0 38px;
+  user-select: none;
+}
+
+.checkbox-label input[type='checkbox'] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+.checkbox-label span {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+}
+
+.checkbox-label span:before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  border: 1px solid #e5e5e5;
+  transition: background 0.3s ease;
+}
+
+.checkbox-label input[type='checkbox']:checked + span:before {
+  background: #0f8fee;
+  content: url('img/check-arrow.svg');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+}
+
+.checkbox-label span:hover:before {
+  border-color: #2998ff;
+}
+
+.checkbox-label span:active:before {
+  filter: brightness(80%);
+}
+
+.form-2 .checkbox-label {
+  margin-top: 38px;
+}
+
+.form-2 .form-horizontal-block {
+  align-items: stretch;
+}
+
+.input-error-msg {
+  font-family: 'Arial';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #e53e3e;
+  margin-top: 8px;
+}
+
+.form-block-cross {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  z-index: 9999;
+}
+
+.form-2-card .form-block-cross {
+  top: 16px;
+  right: 10px;
+}
+
+.form-block-cross:hover {
+  filter: brightness(0.5);
+}
+
+.form-2 .form-horizontal-block div:last-child img {
+  transform: scale(0.94);
+  padding-left: 5px;
+  margin-top: -29px;
+  margin-left: 5px;
+}
+
+.form-1-inputs-container {
+  padding-right: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 776px) {
+  .block-register {
+    flex-direction: column;
+  }
+
+  .index-register-card {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 710px) {
+  .form-card-universal {
+    margin: 0 20px 70px;
+  }
+
+  .form-horizontal-block {
+    display: block;
+  }
+
+  .form-horizontal-block > div:last-child {
+    display: none;
+  }
+
+  .form-1 > div:first-child {
+    display: block;
+    align-self: center;
+    margin-top: -34px;
+  }
+}
+
+@media (max-width: 410px) {
+  .index-register-card {
+    min-width: 320px;
+  }
+}

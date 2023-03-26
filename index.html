@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image" href="img/37bytesLogo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>37Bytes - Task # 2</title>
+  </head>
+
+  <body>
+    <h1>Зарегистрироваться</h1>
+    <div id="choose-form-block" class="block-register hiddable">
+      <div class="card index-register-card">
+        <img class="img-female" src="img/index-woman.svg" />
+        <button class="btn index-btn" onclick="showElement('form-1-block')">
+          Форма 1
+        </button>
+      </div>
+      <div class="card index-register-card">
+        <img class="img-male" src="img/index-man.svg" />
+        <button class="btn index-btn" onclick="showElement('form-2-block')">
+          Форма 2
+        </button>
+      </div>
+    </div>
+
+    <div id="form-1-block" class="card form-card-universal hiddable hidden">
+      <button
+        class="form-block-cross"
+        onclick="showElement('choose-form-block')"
+      >
+        <img src="img/cross.svg" />
+      </button>
+      <!-- ID формы должен быть в формате form-{formNumber}-form -->
+      <form id="form-1-form" class="form-1">
+        <div><img class="img-female" src="img/index-woman.svg" /></div>
+        <div class="form-horizontal-block">
+          <div>
+            <div class="form-1-inputs-container">
+              <!-- Во всех инпутах вторым после класса "form-input" должен идти
+              один из классов, определяющих тип валидации вводимого поля.
+              Возможные значения: validate-phone-or-email / validate-cyrillic /
+              validate-phone / validate-email / validate-not-empty -->
+              <input
+                id="form1-email-tel-input"
+                class="form-input validate-phone-or-email"
+                type="text"
+                name="contacts"
+                placeholder="Email или телефон"
+              />
+              <!-- Все блоки для вывода сообщений об ошибках должны
+              являться следующими сиблингами инпутов с классом form-input
+              для обеспечения корректной работы механизма скрытия сообщений
+              об ошибке при начале ввода в инпут -->
+              <div id="form1-email-tel-error" class="input-error-msg hidden">
+                Введите корректный email или номер телефона
+              </div>
+
+              <input
+                id="form1-city-input"
+                class="form-input validate-cyrillic"
+                type="text"
+                name="city"
+                placeholder="Город"
+              />
+              <div id="form1-city-error" class="input-error-msg hidden">
+                Введите название города (только кириллица)
+              </div>
+            </div>
+            <label class="checkbox-label">
+              <input type="checkbox" name="mailing" value="yes" />
+              <span>Я&nbsp;хочу получить рассылку после мероприятия</span>
+            </label>
+          </div>
+          <div><img class="img-female" src="img/index-woman.svg" /></div>
+        </div>
+
+        <button
+          class="btn register-btn"
+          type="submit"
+          onclick="validateForm(event, 1)"
+        >
+          Зарегистрироваться
+        </button>
+      </form>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do&nbsp;eiusmod tempor incididunt ut&nbsp;labore et&nbsp;dolore magna
+        aliqua. Ut&nbsp;enim ad&nbsp;minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut&nbsp;aliquip ex&nbsp;ea&nbsp;commodo.
+      </p>
+    </div>
+
+    <div
+      id="form-2-block"
+      class="card form-card-universal form-2-card hiddable hidden"
+    >
+      <button
+        class="form-block-cross"
+        onclick="showElement('choose-form-block')"
+      >
+        <img src="img/cross.svg" />
+      </button>
+      <form id="form-2-form" class="form-1 form-2">
+        <div><img class="img-female" src="img/index-man.svg" /></div>
+        <div class="form-horizontal-block">
+          <div>
+            <input
+              id="form-2-name-input"
+              class="form-input validate-cyrillic"
+              type="text"
+              name="name"
+              placeholder="Имя"
+            />
+            <div id="form-2-name-error" class="input-error-msg hidden">
+              Введите имя (только кириллица)
+            </div>
+
+            <input
+              id="form-2-lastname-input"
+              class="form-input validate-cyrillic"
+              type="text"
+              name="lastname"
+              placeholder="Фамилия"
+            />
+            <div id="form-2-lastname-error" class="input-error-msg hidden">
+              Введите фамилию (только кириллица)
+            </div>
+
+            <input
+              id="form-2-phone-input"
+              class="form-input validate-phone"
+              type="text"
+              name="phone"
+              placeholder="Телефон"
+            />
+            <div id="form-2-phone-error" class="input-error-msg hidden">
+              Введите телефон (11 цифр)
+            </div>
+
+            <input
+              id="form-2-email-input"
+              class="form-input validate-email"
+              type="text"
+              name="email"
+              placeholder="Email"
+            />
+            <div id="form-2-email-error" class="input-error-msg hidden">
+              Введите корректный email
+            </div>
+
+            <input
+              id="form-2-company-input"
+              class="form-input validate-not-empty"
+              type="text"
+              name="company"
+              placeholder="Название компании"
+            />
+            <div id="form-2-company-error" class="input-error-msg hidden">
+              Введите название компании (обязательное поле)
+            </div>
+
+            <input
+              id="form-2-region-input"
+              class="form-input validate-cyrillic"
+              type="text"
+              name="region"
+              placeholder="Регион"
+            />
+            <div id="form-2-region-error" class="input-error-msg hidden">
+              Введите название вашего региона (только кириллица)
+            </div>
+          </div>
+          <div><img class="img-female" src="img/index-man.svg" /></div>
+        </div>
+
+        <label class="checkbox-label">
+          <input type="checkbox" name="mailing" value="yes" />
+          <span>Я&nbsp;хочу получить рассылку после мероприятия</span>
+        </label>
+
+        <button
+          class="btn register-btn"
+          onclick="validateForm(event, 2)"
+          type="submit"
+        >
+          Зарегистрироваться
+        </button>
+      </form>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do&nbsp;eiusmod tempor incididunt ut&nbsp;labore et&nbsp;dolore magna
+        aliqua. Ut&nbsp;enim ad&nbsp;minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut&nbsp;aliquip ex&nbsp;ea&nbsp;commodo.
+      </p>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
