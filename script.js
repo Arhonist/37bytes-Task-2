@@ -11,6 +11,17 @@ function showElement(elementId) {
   blockToShow.classList.remove('hidden');
 }
 
+function handleFormExit() {
+  eraseAllInputElements();
+  trackedElementsList.forEach((element) => {
+    element.nextElementSibling.classList.add('hidden');
+  });
+  document.querySelectorAll('input[type=checkbox]').forEach((input) => {
+    input.checked = false;
+  });
+  showElement('choose-form-block');
+}
+
 function validateInput(value, type = 'validate-not-empty') {
   switch (type) {
     case 'validate-not-empty':

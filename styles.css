@@ -13,7 +13,7 @@
     url('fonts/ProximaNovaCond-Black.ttf') format('truetype');
 }
 
-h1 {
+.register-header {
   font-family: 'Proxima Nova Condensed';
   font-style: normal;
   font-weight: 900;
